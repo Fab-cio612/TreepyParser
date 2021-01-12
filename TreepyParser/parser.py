@@ -109,4 +109,4 @@ def parse(html):
                 lagging_pointer = pointer
 
             pointer +=1
-    return stack[0]
+    return stack[0].nodes[0]
