@@ -4,7 +4,7 @@ TreepyParser is a python library that parses html into a tree structure
 
 ## Installation
 
-Use the following command to isntall
+Use the following command to install
 
 ```bash
 pip install TreepyParser
@@ -30,4 +30,4 @@ node.find(tag="", **kwargs) #returns list of all matches in subtree, kwargs repr
 ```
 
 ## License
-[MIT]
+MIT
