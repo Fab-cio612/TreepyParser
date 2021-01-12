@@ -1,4 +1,4 @@
-from dom_tree import Node
+from .dom_tree import Node
 
 def parse_attributes(string):
     attr = {}
@@ -63,7 +63,7 @@ def parse(html):
                 state = 4
             if c == ' ' or c == '>':
                 #create node and add to parent and push on stack
-                node = Node(html[lagging_pointer + 1: pointer].replace("/", ""))
+                node = Node(html[lagging_pointer + 1: pointer].replace("/", "").lower())
                 stack[-1].add_node(node)
                 stack.append(node)
 
@@ -109,7 +109,7 @@ def parse(html):
                 lagging_pointer = pointer
 
             pointer +=1
-    return stack[0].nodes[0]
+    return list(filter(lambda x: x.tag == "html", stack[0].nodes))[0]
 
 #how the parser works:
 #
