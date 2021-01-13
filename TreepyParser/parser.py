@@ -46,10 +46,12 @@ def parse(html):
     for c in html:
         if state == 0:
             if c == '<':
-                #add text node to parent
-                text_node = Node("text")
-                text_node.attributes["text"] = html[lagging_pointer + 1: pointer]
-                stack[-1].add_node(text_node)
+                #add text node to parent and check if it is only whitespace
+                text = html[lagging_pointer + 1: pointer].strip()
+                if text:
+                    text_node = Node("text")
+                    text_node.attributes["text"] = text
+                    stack[-1].add_node(text_node)
 
                 lagging_pointer = pointer
                 state = 1
