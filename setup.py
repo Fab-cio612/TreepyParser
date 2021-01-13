@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as rm:
 
 setuptools.setup(
     name="TreepyParser",
-    version="1.0.0",
+    version="1.1.0",
     license='MIT', 
     author="Fabio Cioni",
     author_email="fab.cioni6@gmail.com",
