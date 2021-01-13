@@ -64,3 +64,14 @@ class Node:
 
         traverse(self)
         return matches
+
+    #traverses tree and returns amount of nodes (root excluded)
+    def nodes_in_subtree(self):
+        num_of_nodes = 0
+        
+        def traverse(node):
+            for n in node.nodes:
+                num_of_nodes += 1
+                traverse(n)
+        traverse(self)
+        return num_of_nodes
