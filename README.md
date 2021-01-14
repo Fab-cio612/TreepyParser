@@ -27,6 +27,7 @@ node.add_node(n) #adds node n to node
 node.insert_node(n, pos) #inserts node n at position pos of node, previous node at pos will be a child of node n
 node.remove_node(pos, remove_subtree) #removes node at pos, if remove_subtree is false children of the removed node will be added to node
 node.find(tag="", **kwargs) #returns list of all matches in subtree, kwargs represent attributes
+node.nodes_in_subtree() #returns amount of nodes (root excluded) in the subtree
 ```
 
 ## License
