@@ -70,8 +70,10 @@ class Node:
         num_of_nodes = 0
         
         def traverse(node):
+            nonlocal num_of_nodes
             for n in node.nodes:
                 num_of_nodes += 1
                 traverse(n)
+
         traverse(self)
         return num_of_nodes
